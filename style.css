@@ -1,0 +1,423 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0%;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+
+  background: transparent;
+
+  font-family: inherit;
+  
+  text-decoration: none;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+ol, ul, li {
+  list-style:none;
+  display:block;
+}
+
+button, a {
+  cursor: pointer;
+  color: inherit
+}
+
+textarea {
+  resize: none
+}
+
+button, input, textarea, select {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  border-radius: 0
+}
+
+/* Default Parameters */
+body{
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 800;
+  transition: background-color .2s linear;
+  overflow-anchor: none;
+}
+
+span{
+  display: inline-block;
+  font-size: 12vh;
+  text-transform: uppercase;
+  color: white;
+}
+
+#root .letter:nth-child(1){
+  margin-left: 3%;
+  margin-top:5%;
+}
+
+.container{
+  position: absolute;
+}
+
+.pageContent{
+  max-width: 90%;
+  opacity: 0;
+  padding: 3%;
+}
+
+.pageContent span{
+  font-size: 4rem;
+  font-weight: 600;
+  color: black;
+  display: inline;
+  letter-spacing: 0.75rem;
+  text-transform: none;
+}
+
+p{
+  font-size: 4.7rem;
+  font-weight: 600;
+  margin-bottom: 4%;
+}
+
+h3{
+  font-size: 2.5vh;
+  font-weight: 600;
+  margin-top: 12%;
+  margin-bottom: 4%;
+}
+
+#inputBox{
+  width: 60%;
+  font-size: 2vh;
+  font-weight: 800;
+  opacity: .4;
+  border-bottom: .4rem solid rgb(0, 0, 0);
+}
+
+#inputBox:focus{
+  opacity: 1;
+}
+
+/* Animating The Letters */
+.letter:nth-child(1){
+  position: relative;
+  animation: throwE 1s linear 3s, blackColor 1s linear 3s;
+  transform: translate(150%,200%) rotate(-180deg) scale(3);
+  animation-fill-mode:forwards;
+}
+
+.letter:nth-child(2){
+  position: relative;
+  animation: throwN 1s ease-out 3s, blackColor 1s linear 3s;
+  animation-fill-mode:forwards;
+  transform: translate(750%,300%) rotate(-250deg) scale(2.8);
+}
+
+.letter:nth-child(3){
+  position: relative;
+  animation: throwJ 1s ease-out 3s, blackColor 1s linear 3s;
+  animation-fill-mode:forwards;
+  transform: translate(500%,100%) rotate(-200deg) scale(3.2);
+}
+
+.letter:nth-child(4){
+  position: relative;
+  animation: throwO 1s ease-out 3s, blackColor 1s linear 3s;
+  animation-fill-mode:forwards;
+  transform: translate(950%,250%) rotate(120deg) scale(2.8);
+}
+
+.letter:nth-child(5){
+  position: relative;
+  animation: throwY 1s ease-out 3s, blackColor 1s linear 3s;
+  animation-fill-mode:forwards;
+  transform: translate(50%,500%) rotate(370deg) scale(2.5);
+}
+
+.letter:nth-child(6){
+  position: relative;
+  animation:loading 4s linear, throwColon 1s linear 3s, blackColor 1s linear 3s;
+  animation-fill-mode:forwards;
+  transform: translate(1200%,0%) rotate(2500deg) scale(2.5);
+}
+
+/* Keyframes */
+@keyframes loading{
+  0%{
+    transform: translate(1200%,0%) rotate(2500deg) scale(2.5);
+  }
+  100%{
+    transform: translate(1200%,0%) rotate(0deg) scale(2.5);
+  }
+}
+
+@keyframes blackColor{
+  0%{
+      color: white;
+  }
+  100%{
+      color: black;
+  }
+}
+
+@keyframes throwE{
+  0%{
+      transform: translate(150%,200%) rotate(-180deg) scale(3);
+  }
+  
+  100%{
+      transform: translate(0%,0%) rotate(0deg) scale(1); 
+  }
+}
+
+@keyframes throwN{
+  0%{
+      transform: translate(750%,300%) rotate(-250deg) scale(2.8);
+  }
+  100%{
+      transform: translate(0%,0%) rotate(0deg) scale(1);   
+  }
+}
+
+@keyframes throwJ{
+  0%{
+    transform: translate(500%,100%) rotate(-200deg) scale(3.2);
+  }
+  100%{
+      transform: translate(0%,0%) rotate(0deg) scale(1);   
+  }
+}
+
+@keyframes throwO{
+  0%{
+      transform: translate(950%,250%) rotate(120deg) scale(2.8);
+  }
+  100%{
+      transform: translate(0%,0%) rotate(0deg) scale(1);   
+  }
+}
+
+@keyframes throwY{
+  0%{
+      transform: translate(50%,500%) rotate(370deg) scale(2.5);
+  }
+  100%{
+      transform: translate(0%,0%) rotate(0deg) scale(1);   
+  }
+}
+
+@keyframes throwColon{
+  0%{
+      transform: translate(1200%,50%) rotate(900deg) scale(2.5);
+  }
+  100%{
+      transform: translate(0%,0%) rotate(0deg) scale(1);   
+  }
+}
+
+/* Media Query */
+@media screen and (max-width: 1600px){
+  
+  .pageContent span{
+    font-size:2rem
+  }
+
+  h3{
+    font-size: 1.5vh;
+    font-weight: 600;
+    margin-top: 2%;
+    margin-bottom: 4%;
+  }
+  
+  #root .letter:nth-child(1){
+    margin-left: 3%;
+    margin-top:1%;
+  }
+
+  .pageContent{
+    padding-top: 0%;
+  }
+
+  .placeholder{
+    left: 3%;
+    font-weight: 800;
+    font-size: 1rem;
+    opacity: .4;  
+    pointer-events: none;
+  }
+}
+
+/* Text Decorations */
+.redline{
+  text-decoration-line: underline;
+  text-decoration-color:  #F48B7B;
+}
+
+.greenline{
+  text-decoration-line: underline;
+  text-decoration-color:  #C6DDCD;
+}
+
+.yellowline{
+  text-decoration-line: underline;
+  text-decoration-color:  #EAC983;
+}
+
+.placeholder{
+  transition:all .5s ease-out;
+  position: absolute;
+  left: 3%;
+  font-weight: 800;
+  font-size: 2rem;
+  opacity: .4;  
+  pointer-events: none;
+}
+
+.btn{
+  background-image: linear-gradient(90deg, white 50%, black 50%);
+  transition: all 0.6s;
+  background-size: 300%;
+  background-position: 0%;
+  padding: 1.2%;
+  margin-left: 2%;
+  font-size: 3vh;
+  font-weight: 600;
+  border: 5px solid black;
+}
+
+.btn:hover{
+  color: #fff;
+  background-position: 100%;
+  transform: translateX(0.5rem);
+}
+
+.btn:active {
+  transform: translate(0.5rem, 0.5rem);
+  box-shadow: 0px 10px 20px -15px rgba(0, 0, 0, 0.75);
+}
+
+/* Custom classes to apply with JS */
+
+.bg{
+  background-color: white !important;
+  overflow: auto;
+}
+
+.moveUp{
+  transform: translateY(-50%) scale(.8);
+}
+
+.show{
+  opacity: 1;
+  transition: 2s ease-out
+}
+
+/*Accordion events*/
+div.events {
+  background-color: #231F1F;
+  margin-top: 60px;
+  padding: 60px;
+  opacity: 0;
+}
+
+div.events.show {
+  opacity: 1;
+  transition: 2s ease-out
+}
+
+.events h2 {
+  margin-bottom: 3rem;
+  font-size: 22px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+div.eventHolder{
+  transition: all .2s ease-in;
+  padding: 1rem;
+  background-color: #F48B7B;
+}
+
+.accordion {
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+
+  transition: 0.2s;
+}
+
+.accordion:after {
+  content: '\02795';
+  font-size: 20px;
+  float: right;
+}
+
+.active:after {
+  content: "\2796";
+  color: #000;
+}
+
+span.eventTitle {
+  margin-bottom: 1rem;
+  line-height: 2em;
+  border-bottom: 0.5rem solid white;
+  color: #000;
+  font-size: 25px;
+  text-transform: none;
+}
+
+span.date {
+  display: block;
+  padding-bottom: 0.5rem;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #000000;
+  text-decoration-color: none;
+}
+
+.active, .accordion:hover {
+  transition: 0.2s;
+}
+
+div.eventHolder:hover {
+  background-color: #C6DDCD;
+  color: black;
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+div.panel p{
+  margin-bottom: 1%;
+  font-size: 1.2rem;
+  line-height: 1.5em;
+  letter-spacing: 0.05em;
+}
+
+div.panel button.btn {
+  margin-left: 0;
+  margin-bottom: 5px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  background-image: none;
+  border: 3px solid #fff;
+}
+
+div.panel button.btn:hover {
+  color: #000;
+  transform: none;
+  border: 3px solid #000;
+}
+
+div.panel button.btn:active {
+  transform: none;
+  box-shadow: 0px 10px 20px -15px #fff;
+}
